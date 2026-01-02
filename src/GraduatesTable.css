@@ -1,0 +1,246 @@
+/* Error handling and improvements */
+.loading-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  text-align: center;
+  padding: 40px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.btn-retry {
+  background: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-retry:hover {
+  background: #c0392b;
+}
+
+/* Table improvements */
+.table-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-refresh {
+  background: #3498db;
+  color: white;
+}
+
+.btn-migrate {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn-initial {
+  background: #9b59b6;
+  color: white;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.firestore-info-card {
+  background: #f8f9fa;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.firestore-info-card h4 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.firestore-info-card ul {
+  margin: 10px 0;
+  padding-right: 20px;
+}
+
+.firestore-info-card li {
+  margin-bottom: 5px;
+}
+
+.graduates-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.graduates-table th,
+.graduates-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: right;
+}
+
+.graduates-table th {
+  background: #2c3e50;
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+.graduates-table tr:hover {
+  background: #f5f5f5;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.status.approved {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-btn {
+  background: #f39c12;
+  color: white;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.firestore-id {
+  color: #7f8c8d;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 3px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 40px !important;
+  font-style: italic;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.approved-count {
+  color: #27ae60;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.pending-count {
+  color: #f39c12;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .graduates-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
