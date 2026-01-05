@@ -44,8 +44,16 @@ const GraduatesTable = () => {
     setMigrating(true);
     try {
       const result = await migrateFromLocalStorage();
-      alert(`✅ Migrated ${result.migrated} of ${result.total} records`);
-      loadData(false);
+      
+      if (result.migrated === 0 && result.total === 0) {
+        alert("📭 No data found in localStorage to migrate.\nUse '➕ Initial Data' first.");
+      } else if (result.migrated === 0) {
+        alert("⚠️ All data already exists in Firestore (no duplicates added).");
+      } else {
+        alert(`✅ Successfully migrated ${result.migrated} records`);
+        loadData(false);
+      }
+      
     } catch (err) {
       alert(`❌ Migration failed: ${err.message}`);
     } finally {
@@ -106,15 +114,8 @@ const GraduatesTable = () => {
         </button>
       </div>
 
-      <div className="firestore-info-card">
-        <h4>🔹 Firestore ID Information:</h4>
-        <ul>
-          <li><strong>Firestore Document ID</strong> is the primary identifier (firestoreId)</li>
-          <li><strong>No</strong> additional "id" field inside data</li>
-          <li><strong>"code"</strong> field remains for referencing original data</li>
-          <li>Old ID system was <strong>replaced</strong> by Firestore ID</li>
-        </ul>
-      </div>
+      {/* 🔥 تم إزالة البطاقة هنا */}
+      {/* <div className="firestore-info-card"> ... </div> */}
 
       <table className="graduates-table">
         <thead>
