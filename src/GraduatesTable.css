@@ -90,6 +90,7 @@
   box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
 
+/* ✅ تم حذف هذا الجزء بالكامل:
 .firestore-info-card {
   background: #f8f9fa;
   border: 2px solid #3498db;
@@ -111,6 +112,7 @@
 .firestore-info-card li {
   margin-bottom: 5px;
 }
+*/
 
 .graduates-table {
   width: 100%;
